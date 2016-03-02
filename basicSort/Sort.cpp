@@ -45,9 +45,8 @@ void Sort::printArr(int *arr, int arrSize){
 }
 
 
-void Sort::mergeSort(){
-    
-    
+void Sort::mergeSort(int *arr, int p, int r){
+
 }
 
 void Sort::insertionSort(int *arr, int n){
@@ -80,23 +79,56 @@ void Sort::insertionPrint(int *arr, int n, int j){
         cout << arr[i] << ", ";
     }
     
-    cout << " | " << arr[j] << " | ";
-    
+    if( j == n-1){
+        cout << " | " << arr[j] << "]" << endl;
+    }
+    else {
+        cout << " | " << arr[j] << " | ";
+    }
     //Print Unsorted portion
     
     for(int i = j+1; i < n-1 ; i++){
         cout << arr[i] << ", ";
     }
     
-    cout << arr[n-1] << "]" << endl;
+    if(j != n-1){
+       cout << arr[n-1] << "]" << endl;
+    }
+    
 }
 
 void Sort::selectionSort(){
     
 }
 
-void Sort::quickSort(){
+void Sort::quickSort(int *arr, int start, int end){
+    if (start < end) {
+        int q = partition(arr, start, end);
+        quickSort(arr,start, q-1);
+        quickSort(arr, q+1, end);
+    }
+    printArr(arr, end);
+}
+int Sort::partition(int *arr, int start, int end){
+    int x = arr[end];
+    int i = start - 1;
     
+    for(int j = start; j < end-1; j++){
+        if (arr[j] <= x){
+            i++;
+            //Swap arr[i] and arr[j]
+            int temp1 = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp1;
+        }
+    }
+    //Swap arr[i+1] and A[end]
+    int temp2 = arr[i+1];
+    arr[i+1] = arr[end];
+    arr[end] = temp2;
+    
+    
+    return i+1;
 }
 
 void Sort::bubbleSort(){

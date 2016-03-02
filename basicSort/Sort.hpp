@@ -18,11 +18,12 @@ public:
     ~Sort();
     void printMenu();
     void printArr(int *arr, int arrSize);
-    void mergeSort();
+    void mergeSort(int *arr, int p, int r);
     void insertionSort(int *arr, int arrSize);
     void insertionPrint(int *arr, int arrSize, int j);
     void selectionSort();
-    void quickSort();
+    void quickSort(int *arr, int p, int r);
+    int partition(int *arr, int p, int r);
     void bubbleSort();
 protected:
 private:

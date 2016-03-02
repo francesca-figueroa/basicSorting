@@ -50,6 +50,22 @@ int main()
             
         }
         else if(input == "4"){
+            //Quicksort
+            
+            cout << endl;
+            cout << "----------------" << endl;
+            cout << "Quicksort: " << endl;
+            cout << "----------------"<< endl;
+            cout << "We start with the array : " << endl << endl;
+            
+            sSort->printArr(testArr,n);
+            
+            cout << endl;
+            
+            sSort->quickSort(testArr,0,n);
+            
+            cout << endl;
+            
             
         }
         else if(input == "5"){
